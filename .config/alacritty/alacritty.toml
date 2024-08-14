@@ -27,3 +27,6 @@ style = "Regular"
 
 [keyboard]
 bindings = [{ key = "Return", mods = "Alt", action = "ToggleFullscreen" }]
+
+[env]
+TERM = "alacritty-direct"
