@@ -1,3 +1,6 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
 [window]
 decorations = "Full"
 opacity = 1.0
