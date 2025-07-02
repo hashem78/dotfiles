@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+MY_PATH=$(dirname "$0")/exclusions.txt
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/development ~/dotfiles -mindepth 1 -maxdepth 2 -type d | grep -v -f exclusions.txt | fzf)
+    selected=$(find ~/development ~/dotfiles -mindepth 1 -maxdepth 2 -type d | grep -v -f "$MY_PATH" | fzf)
 fi
 
 if [[ -z $selected ]]; then
