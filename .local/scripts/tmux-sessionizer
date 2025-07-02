@@ -3,11 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    if [[ $HOST_NAME = "holayan-laptop" ]]; then
-        selected=$(find ~/development ~/source ~/sourcegit ~/dotfiles  -mindepth 1 -maxdepth 1 -type d | fzf)
-    else
-        selected=$(find ~/development ~/dotfiles -mindepth 1 -maxdepth 1 -type d | fzf)
-    fi
+    selected=$(find ~/development ~/dotfiles -mindepth 1 -maxdepth 2 -type d | grep -v -f exclusions.txt | fzf)
 fi
 
 if [[ -z $selected ]]; then
